@@ -83,7 +83,7 @@ lazy val connector = (project in file("connector"))
       "com.google.inject" % "guice" % "4.2.3",
 
       // Keep com.google.cloud dependencies in sync
-      "com.google.cloud" % "google-cloud-bigquery" % "1.123.2",
+      "com.google.cloud" % "google-cloud-bigquery" % "1.126.3",
       "com.google.cloud" % "google-cloud-bigquerystorage" % "1.6.0"
         exclude("io.grpc", "grpc-netty-shaded"),
       // Keep in sync with com.google.cloud
@@ -107,7 +107,8 @@ lazy val connector = (project in file("connector"))
       // scalastyle:on
       // test
 
-      "org.apache.spark" %% "spark-avro" % sparkVersion % "test"
+      "org.apache.spark" %% "spark-avro" % sparkVersion % "test",
+      "com.google.guava" % "guava" % "30.1-jre"
       ))
       .map(_.excludeAll(excludedOrgs.map(ExclusionRule(_)): _*))
   )
