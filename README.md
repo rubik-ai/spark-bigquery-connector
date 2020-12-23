@@ -704,3 +704,7 @@ or
 spark.conf.set("gcpAccessToken", "<access-token>")
 ```
 
+### Build
+```shell script
+ sbt 'set test in assembly := {}' clean package
+```
